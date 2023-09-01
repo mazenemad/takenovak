@@ -1,7 +1,8 @@
-export default function RightSlide8() {
+export default function RightSlide8(props) {
   return (
     <>
-      <div className="content__main slide8">
+      <div style={{opacity:props.start?1:0}} className="content__main slide8">
+        {/* <div className="slide8content"> */}
         <h2>Show your support and nab some swag!</h2>
         <a
           href="https://www.funnyshirts.org/design/4142349/Rat+Park+w%2F+back
@@ -13,8 +14,9 @@ export default function RightSlide8() {
             <span>Buy Swag</span>
           </button>
         </a>
+        {/* </div> */}
       </div>
-      <h3 className="content__index">08</h3>
+      <h3 style={{display:props.start?null:'none'}} className="content__index">08</h3>
     </>
   );
 }

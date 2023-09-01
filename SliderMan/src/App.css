@@ -26,10 +26,13 @@ body {
 }
 
 .left{
+  padding: 20px;
+
   transform: rotateZ(180deg);
 }
 
 .left img{
+  
   transform: rotateZ(-180deg);
 
 }
@@ -53,7 +56,10 @@ body {
   height: 10px;
   margin: 10px;
 }
-
+.toLeft{
+  /* padding-top: 10% !important; */
+  width: 85%;
+}
 .swiper-pagination-bullet:hover {
   background-color: rgba(91, 91, 241, 0.9);
 }
@@ -81,12 +87,23 @@ body {
   }
 }
 @media (400px <= width <= 1000px){
+  h2{
+    font-size: 80px;
+  }
+  h3{
+    font-size: 50px;
+  }
   p{
     font-size: 30px  !important;
   }
   .left{
-    padding: 20px;
     height: 40% !important;
+  }
+  .toLeft{
+    /* padding: 130px !important; */
+    /* height: 42% !important; */
+    width: 80%;
+
   }
   .swiper{
     height: 60%;

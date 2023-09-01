@@ -1,10 +1,10 @@
 import TypeIt from "typeit-react";
-
+import { useState } from "react";
 export default function RightSlide1(props) {
   const quote = props.type[0];
   return (
     <>
-      <div className="content__main">
+      <div style={{opacity:props.start?1:0}} className="content__main">
         <p>
           Enter Rat Park at your own risk. Lose the cage. Find yourself. An L.A.
           power couple orders an A.I. sex droid to escape their marital prison.
@@ -24,20 +24,28 @@ export default function RightSlide1(props) {
         <br />
         <div className="quotes">
           <div className="quotes">
-            <TypeIt 
-                options={{
-                  loop: true,
-                  waitUntilVisible: true,
-                }}
-              >
-                <p className="quote">{quote.quote}</p>
+              {/* <TypeIt 
+                  options={{
+                    loop: true,
+                    waitUntilVisible: true,
+                  }}z
+                >
+                  <p className="quote">{quote.quote}</p>
+                </TypeIt> */}
+              <TypeIt
+                  getBeforeInit={(instance) => {
+                  // instance.type(quote.quote);
+                    return instance;
+                  }}
+                >
+                  <p className="quote">{quote.quote}</p>              
               </TypeIt>
             <p className="author">{quote.author}</p>
             <p className="affiliation">{quote.affiliation}</p>
           </div>
         </div>
       </div>
-      <h3 class="content__index">01</h3>
+      <h3 style={{display:props.start?null:'none'}} class="content__index">01</h3>
     </>
   );
 }

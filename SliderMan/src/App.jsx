@@ -85,7 +85,9 @@ const handleResize = () => {
 
   const speed = 1000
   const [controlledSwiper, setControlledSwiper] = useState(null);
+  const [controlledSwiper2, setControlledSwiper2] = useState(null);
   const [hideIcon, sethideIcon] = useState(false);
+  const [start, setStart] = useState(0);
   return (
     <div className="container">
       <div
@@ -99,12 +101,14 @@ const handleResize = () => {
         <img width={150} height={150} src="assets/move.png"></img>
       </div>
       <Swiper
-      onSlideChange={(e)=>sethideIcon(true)}
+      onSlideChange={(e)=>{sethideIcon(true);console.log(e);setStart(e.realIndex)}}
       cubeEffect={{
         shadow:false,
         }
       }
-       loop={false}
+       loop={true}
+      slidesPerView={0}
+       onSwiper={setControlledSwiper2}
         effect={"cube"}
         direction={!isMobile?"vertical":"horizontal"}
         pagination={pagination}
@@ -114,49 +118,53 @@ const handleResize = () => {
         speed={speed}
       >
         <SwiperSlide>
-            <RightSlide1 type = {quotes} />
+            <RightSlide1 start={start ===0?true:false} type = {quotes} />
         </SwiperSlide>
 
         <SwiperSlide>
-            <RightSlide2 type = {quotes} />
+            <RightSlide2 start={start === 1?true:false} type = {quotes} />
         </SwiperSlide>
 
         <SwiperSlide>
-            <RightSlide3 type = {quotes} />
+            <RightSlide3 start={start === 2?true:false} type = {quotes} />
         </SwiperSlide>
 
         <SwiperSlide>
-          <RightSlide4 type = {quotes} />
+          <RightSlide4 start={start === 3?true:false} type = {quotes} />
         </SwiperSlide>
 
         <SwiperSlide>
-          <RightSlide5 type = {quotes} />
+          <RightSlide5 start={start === 4?true:false} type = {quotes} />
         </SwiperSlide>
 
         <SwiperSlide>
-          <RightSlide6 />
+          <RightSlide6 start={start === 5?true:false} />
         </SwiperSlide>
 
         <SwiperSlide>
-          <RightSlide7 />
+          <RightSlide7 start={start === 6?true:false}/>
         </SwiperSlide>
 
         <SwiperSlide>
-          <RightSlide8 />
+          <RightSlide8 start={start === 7?true:false}/>
         </SwiperSlide>
 
         <SwiperSlide>
-          <RightSlide9 />
+          <RightSlide9 start={start === 8?true:false} />
         </SwiperSlide>
       </Swiper>
 
       <Swiper
+      loop={true}
+      // loopedSlides={1}
+      // slidesPerView={0}
         effect={"cube"}
         cubeEffect={{
           shadow:false,
         }}
         direction={!isMobile?"vertical":"horizontal"}
         modules={[EffectCube, Pagination, Controller, Autoplay]}
+        controller={{ control: controlledSwiper2 }}
         reverseDirection={true}
         onSwiper={setControlledSwiper}
         autoplay={{
@@ -165,12 +173,12 @@ const handleResize = () => {
         }}
         draggable={false}
         speed={speed}
-        className="mySwiper left"
+        className={`mySwiper left ${start >=5 && start <8?'toLeft':null}`}
       >
         <div className="content">
           <SwiperSlide>
-            <Scene></Scene>
-            {/* <LeftSlide1 /> */}
+            {/* <Scene></Scene> */}
+            <LeftSlide1 />
           </SwiperSlide>
           <SwiperSlide>
             <LeftSlide2 />

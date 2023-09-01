@@ -1,10 +1,14 @@
 import TypeIt from "typeit-react";
-
+import { useState } from "react";
 export default function RightSlide2(props) {
   const quote = props.type[1];
+  const [instance, setInstance] = useState(null);
+  if(props.start){
+    instance.unfreeze();
+  }
   return (
     <>
-      <div className="content__main">
+      <div style={{opacity:props.start?1:0}} className="content__main">
         <p>
           In the spirit of Elmore Leonard's Get Shorty and the HBO series
           Entourage, Adam Novak's crime novel, The Non-Pro, skewers the
@@ -30,21 +34,21 @@ export default function RightSlide2(props) {
         <br />
           <div className="quotes">
             <div className="quotes">
-              <TypeIt 
-                options={{
-                  loop: true,
-                  waitUntilVisible: true,
-                }}
-              >
-                <p className="quote">{quote.quote}</p>
-              </TypeIt>
+              <TypeIt
+               className="quote"
+                  getBeforeInit={(instance) => {
+                    instance.freeze()
+                  instance.type(quote.quote);
+                  setInstance(instance)
+                    return instance;
+                  }}></TypeIt>
               <p className="author">{quote.author}</p>
               <p className="affiliation">{quote.affiliation}</p>
             </div>
           </div>
 
       </div>
-      <h3 className="content__index">02</h3>
+      <h3 style={{display:props.start?null:'none'}} className="content__index">02</h3>
     </>
   );
 }

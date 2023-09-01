@@ -1,7 +1,8 @@
-export default function RightSlide7() {
+export default function RightSlide7(props) {
   return (
     <>
-      <div className="content__main">
+      <div style={{opacity:props.start?1:0}} className="content__main">
+        {/* <div style={{width:'100%'}}> */}
         <h2>Podcasts</h2>
         <h3>Rare Bird Radio - Conversation with Tyler Knight</h3>
         <a
@@ -43,8 +44,9 @@ export default function RightSlide7() {
             <span>Spotify</span>
           </button>
         </a>
+        {/* </div> */}
       </div>
-      <h3 className="content__index">07</h3>
+      <h3 style={{display:props.start?null:'none'}} className="content__index">07</h3>
     </>
   );
 }

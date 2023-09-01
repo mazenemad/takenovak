@@ -1,7 +1,7 @@
-export default function RightSlide6() {
+export default function RightSlide6(props) {
   return (
     <>
-      <div className="content__main slide-of-buttons">
+      <div style={{opacity:props.start?1:0}} className="content__main slide-of-buttons">
         <h2>Excerpts</h2>
         <h3>Rat Park</h3>
         <a href="https://theartifactuals.com/rat-park/ " target="_blank">
@@ -25,7 +25,7 @@ export default function RightSlide6() {
         >
           <button className="custom-btn btn-12">
             <span>Read</span>
-            <span>Rue Morgue</span>
+            <span style={{fontSize:'15px'}}>Rue Morgue</span>
           </button>
         </a>
         <a
@@ -82,7 +82,7 @@ export default function RightSlide6() {
           </button>
         </a>
       </div>
-      <h3 className="content__index">06</h3>
+      <h3 style={{display:props.start?null:'none'}} className="content__index">06</h3>
     </>
   );
 }
