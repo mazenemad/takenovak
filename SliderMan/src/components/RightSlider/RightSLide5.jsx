@@ -22,7 +22,7 @@ export default function RightSlide5(props) {
           <a href="https://a.co/d/a6r7baw " target="_blank">
             <button className="custom-btn btn-12">
               <span>Hurry!</span>
-              <span>Listen Now</span>
+              <span style={{fontSize:"17px"}}>Listen Now</span>
             </button>
           </a>
         </div>

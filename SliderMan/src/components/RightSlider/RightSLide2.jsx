@@ -27,7 +27,7 @@ export default function RightSlide2(props) {
           >
             <button className="custom-btn btn-12">
               <span>Hurry!</span>
-              <span>Buy Now</span>
+              <span style={{fontSize:"17px"}}>Buy Now</span>
             </button>
           </a>
         </div>

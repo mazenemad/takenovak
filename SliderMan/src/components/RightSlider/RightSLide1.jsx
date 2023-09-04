@@ -17,7 +17,7 @@ export default function RightSlide1(props) {
           <a href="https://a.co/d/0p21mCR" target="_blank">
             <button className="custom-btn btn-12">
               <span>Hurry!</span>
-              <span>Buy Now</span>
+              <span style={{fontSize:"17px"}}>Buy Now</span>
             </button>
           </a>
         </div>

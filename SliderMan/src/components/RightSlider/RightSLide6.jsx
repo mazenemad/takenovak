@@ -34,7 +34,7 @@ export default function RightSlide6(props) {
         >
           <button className="custom-btn btn-12">
             <span>Read</span>
-            <span>Residence11</span>
+            <span style={{fontSize:"18px"}}>Residence11</span>
           </button>
         </a>
         <a href="https://www.youtube.com/watch?v=DKIgmHT6lZ4 " target="_blank">
@@ -59,7 +59,7 @@ export default function RightSlide6(props) {
         >
           <button className="custom-btn btn-12">
             <span>Read</span>
-            <span>WME News</span>
+            <span style={{fontSize:"17px"}}>WME News</span>
           </button>
         </a>
         <h3>Take Fountain</h3>

@@ -448,3 +448,9 @@ color: transparent;
 .quotes .quote  {
   font-size: 18px;
 }
+
+@media (min-width:1700px) {
+  .content__main{
+    margin-top: 25%;
+  }
+}

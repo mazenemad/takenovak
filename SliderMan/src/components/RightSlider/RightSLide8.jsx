@@ -10,8 +10,8 @@ export default function RightSlide8(props) {
           target="_blank"
         >
           <button className="custom-btn btn-12">
-            <span>Hurry!</span>
-            <span>Buy Swag</span>
+            <span style={{width:'180px'}}>Hurry!</span>
+            <span style={{width:'180px'}}>Buy Swag</span>
           </button>
         </a>
         {/* </div> */}

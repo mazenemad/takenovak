@@ -168,7 +168,7 @@ const handleResize = () => {
         reverseDirection={true}
         onSwiper={setControlledSwiper}
         autoplay={{
-          delay: 150000,
+          delay: 5000,
           disableOnInteraction: true,
         }}
         draggable={false}

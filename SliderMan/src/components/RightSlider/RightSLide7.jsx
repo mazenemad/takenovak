@@ -12,7 +12,7 @@ export default function RightSlide7(props) {
         >
           <button className="custom-btn btn-12 sounds">
             <span>Listen</span>
-            <span>SoundCloud</span>
+            <span style={{fontSize:"17px"}}>SoundCloud</span>
           </button>
         </a>
         <a
@@ -31,7 +31,7 @@ export default function RightSlide7(props) {
         >
           <button className="custom-btn btn-12">
             <span>Listen</span>
-            <span>Final Draft</span>
+            <span style={{fontSize:"17px"}}>Final Draft</span>
           </button>
         </a>
         <h3>What Bubbles Up - Rat Park</h3>
